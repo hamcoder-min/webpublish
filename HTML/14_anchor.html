@@ -8,14 +8,15 @@
 <body>
     <h1>Anchor Tag</h1>
     <h3>절대경로</h3>
-    <a href="http://www.naver.com">네이버</a>
-    <a href="http://www.google.com">Google</a>
+    <a href="http://www.naver.com" target="_self">네이버</a> <!-- 자기 자신의 창(디폴트) : _self-->
+    <a href="http://www.google.com" target="_blank">Google</a> <!-- 새창 : _blank -->
     <a href="http://127.0.0.1:5500/HTML/13_table.html">테이블 사용법</a>
     <hr>
     <h3>상대경로</h3>
-    <a href="13_table.html">테이블 사용법</a>
+    <a href="13_table.html">테이블 사용법</a> <!-- http://127.0.0.1:5500/HTML/13_table.html -->
+    <a href="/13_table.html">테이블 사용법2</a> <!-- http://127.0.0.1:5500/13_table.html -->
     <hr>
     <h3>파일 다운로드</h3>
-    <a href="13_table.zip">테이블 다운로드</a>
+    <a href="download/13_table.zip">테이블 다운로드</a>
 </body>
 </html>
