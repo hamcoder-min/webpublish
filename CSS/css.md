@@ -19,6 +19,8 @@
 - Sibling selector (인접한 형제 선택자): HTML 태그의 포함관계 중 같은 레벨에 있는 태그들을 형제로 구분. 시작태그 + 형제(인접한) 태그 선택, 시작태그 ~ 형제(모든형제) 태그
 - Attribute selector(속성 선택자) : 태그의 속성값을 구분하여 스타일을 적용
 - Pseudo class selector : 정해진 이벤트적 요소를 실행하면서 스타일 적용. :psudo 클래스명 (:hover, :focus, ...)
+- nth-chlid pseudo class selector : 반복되는 태그들의 순서를 토해 스타일 적용. :first-chlid, nth-chlid(수열), ...
+- status pseudo class selector : HTML 태그의 disable, checked 속성을 통해 스타일 적용. :disabled, :checked
 
 ## 4. 단위 - pixel, percent(%), em, rem, ...
 - pixel : 고정된 길이로 설정, 화면 크기가 변경되어도 사이즈가 유지
