@@ -1,3 +1,6 @@
+## !! 크로스 브라우징(Cross Browsing) 
+- 작성한 UI(HTML) 페이지를 모든 브라우저에서 동일한 모습으로 출력
+
 ## 1. HTML(HyperText Markup Language)
 - 팀 버너스 개발, W3C에서 HTML 버전 등 관리
 - 태그로 불리우며, 시작태그<>, 종료태그</>로 구성 또는 시작과 종료가 하나의 태르고 구성된 경우도 있음
@@ -31,7 +34,7 @@
 - 컨텐츠 내용 크기만 적용 : inline
 - span, button, a, ...
 - 인라인 레벨 태그는 인라인 레벨 태그만 일부 포함 가능
-  예) <span> <a href="">다음</a> </span>
+  예) <span><a href="">다음</a></span>
 - 다른 레벨 형식으로 수정 시 display 속성을 이용함
   예) <span style="display:block;">블록 레벨로 변경</span>
 - style 속성으로 사이즈, 여백을 변경할 수 없다!! => 블록, 인라인 블록으로 변경
