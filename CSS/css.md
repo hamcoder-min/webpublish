@@ -14,7 +14,7 @@
 - Tag selector : HTML 태그를 선택하여 스타일 정의
 - Class selector : HTML 태그에 class 속성을 추가하여 스타일 정의. style 태그에서는 dot(.)으로 선택
 - Id selector : HTML 태그에 id 속성을 추가하여 스타일 정의. style 태그에서는 sharp(#)으로 선택
-- Descendatn(자손) selector : HTML 태그의 포함관계를 통해 부모, 자식 태그로 구분하여 선택. 부모와 자식을 공백으로 구분
+- Descendant(자손) selector : HTML 태그의 포함관계를 통해 부모, 자식 태그로 구분하여 선택. 부모와 자식을 공백으로 구분
 - Child(자식) selector : HTML 태그의 포함관계를 통해 부모, 자식 태그로 구분하여 선택. 부모와 자식을 > 으로 구분
 - Sibling selector (인접한 형제 선택자): HTML 태그의 포함관계 중 같은 레벨에 있는 태그들을 형제로 구분. 시작태그 + 형제(인접한) 태그 선택, 시작태그 ~ 형제(모든형제) 태그
 - Attribute selector(속성 선택자) : 태그의 속성값을 구분하여 스타일을 적용
