@@ -180,7 +180,7 @@
             <p class="description">Projects</p>
             <ul class="categories">
                 <li>
-                    <button class="category">
+                    <button class="category selected">
                         All
                         <span class="category-count">8</span>
                     </button>
@@ -212,49 +212,49 @@
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project2.webp" alt="project #2" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #2</h3>
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project3.webp" alt="project #3" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #3</h3>
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project4.webp" alt="project #4" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #4</h3>
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project5.webp" alt="project #5" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #5</h3>
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project6.webp" alt="project #6" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #6</h3>
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project7.webp" alt="project #7" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #7</h3>
                         <p>Clone Coding with HTML, CSS</p>
                     </div>
                 </li>
-                <li>
+                <li class="project">
                     <img src="images/projects/project8.webp" alt="project #8" class="project-img">
                     <div class="project-metadata">
                         <h3 class="project-metadata-title">Project #8</h3>
@@ -265,41 +265,70 @@
         </section>
 
         <section id="testimonial" class="section container">
-            <h3>Testimonial</h3>
-            <p>See what they say about me</p>
-            <div>
-                <img src="images/testimonials/people1.webp" alt="">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusamus impedit aperiam sequi? Dolores sit ipsum, velit labore recusandae, 
-                    laboriosam consequuntur ducimus ut, fuga officia autem. 
-                    Exercitationem distinctio voluptas sequi eligendi! <br>
-                    James Kim / Google
-                </p>
-            </div>
-            <div>
-                <img src="images/testimonials/people2.webp" alt="">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ea excepturi cum suscipit? Officiis provident qui aliquam 
-                    deserunt nemo nihil vel illo cupiditate? 
-                    Consequatur debitis aperiam minus voluptas necessitatibus libero sapiente! <br>
-                    Smith park / Samsung
-                </p>
-            </div>
-            <div>
-                <img src="images/testimonials/people3.webp" alt="">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Dolores ad iure facilis temporibus vitae vel blanditiis 
-                    dolorum animi architecto ex, similique perferendis, 
-                    veritatis est eius enim nemo reiciendis aliquam eum! <br>
-                    Anna Jin / Samsung
-                </p>
-            </div>
+            <h2 class="title">Testimonial</h2>
+            <p class="description">See what they say about me</p>
+            <ul class="testimonials">
+                <li class="testimonial">
+                    <img src="images/testimonials/people1.webp" alt="testimonial" class="testimonial-img">
+                    <div class="testimonial-text">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Accusamus impedit aperiam sequi? Dolores sit ipsum, velit labore recusandae, 
+                            laboriosam consequuntur ducimus ut, fuga officia autem. 
+                            Exercitationem distinctio voluptas sequi eligendi!
+                        </p>
+                            <p><a href="#" class="testimonial-text-name">James Kim</a> / Google</p>
+                            
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <img src="images/testimonials/people2.webp" alt="testimonial" class="testimonial-img">
+                    <div class="testimonial-text">
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                            Ea excepturi cum suscipit? Officiis provident qui aliquam 
+                            deserunt nemo nihil vel illo cupiditate? 
+                            Consequatur debitis aperiam minus voluptas necessitatibus libero sapiente!
+                        </p>
+                            <p><a href="#" class="testimonial-text-name">Smith park</a> / Samsung</p>
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <img src="images/testimonials/people3.webp" alt="testimonial" class="testimonial-img">
+                    <div class="testimonial-text">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Dolores ad iure facilis temporibus vitae vel blanditiis 
+                            dolorum animi architecto ex, similique perferendis, 
+                            veritatis est eius enim nemo reiciendis aliquam eum!
+                        </p>
+                            <p><a href="#" class="testimonial-text-name">Anna Jin</a> / Samsung</p>
+                            
+                    </div>
+                </li>
+            </ul>
         </section>
+
+        <!-- Arrow Top -->
+        <aside>
+            <a href="#" class="arrow-up"><i class="fa-solid fa-arrow-up"></i></a>
+        </aside>
     </main>
 
-    <footer id="contact"></footer>
+    <footer id="contact" class="footer">
+        <h2 class="title">Let's talk</h2>
+        <p class="description">jeon.developer.judy@gmail.com</p>
+        <ul class="contact-links">
+            <li>
+                <a href="#" class="contact-link"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="#" class="contact-link"><i class="fa-brands fa-linkedin"></i></a>
+            </li>
+        </ul>
+        <p>
+            Dream Software Engineer Judy · All right reserved
+        </p>
+    </footer>
 </body>
 </html>
