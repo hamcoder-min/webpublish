@@ -336,6 +336,7 @@ main {
 .footer-icons a {
     display: flex;
     color: var(--color-font);
+    font-size: 0.9rem;
 }
 
 .footer-info-lang {
