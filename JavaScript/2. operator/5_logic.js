@@ -28,3 +28,21 @@ console.log((a < b) || (a < b));
 console.log((a < b) || (a > b));
 console.log((a === b) || (a < b));
 console.log((a === b) || (a > b));
+
+console.log('ShortCut ---------------');
+//입력받은 조건을 비교하여 1 ~ 9 까지 범위의 수를 출력
+let number = 11;
+if((number < 10) && (number > 0)) { //Shortcut
+    console.log(`result = true`);
+} else {
+    console.log(`result = false`);
+}
+
+//입력받은 숫자가 0보다 크면 출력
+let number2 = 11;
+if((number2 > 0) || (number2 > 100)) { //Shortcut
+    console.log(`result = true`);
+} else {
+    console.log(`result = false`);
+}
+
