@@ -14,7 +14,19 @@ function add(... numbers) {
     // for(let i = 0; i < numbers.length; i++){
     //     sum += numbers[i];
     // }
+    
+    //한줄일때는 return과 {}를 생략 가능 (원래는 (acc, cur) => {return acc + cur})
+    let sum = numbers.reduce((acc, cur) => acc + cur);  
+    return sum;
+}
 
-    let sum = numbers.reduce((acc, cur) => acc + cur);  //return과 {}를 생략 가능 (원래는 (acc, cur) => {return acc + cur})
+// console.clear();
+console.log(add2(1, 2, 3));
+console.log(add2(1, 2, 3, 6, 2, 5, 9));
+console.log(add2(1, 2, 3, 6, 2, 5, 9, 10, 45, 11, 23));
+
+function add2(a, b, ... numbers) {
+    // let c = numbers.reduce((acc, cur) => acc + cur);
+    let sum = a + b + numbers.reduce((acc, cur) => acc + cur);
     return sum;
 }

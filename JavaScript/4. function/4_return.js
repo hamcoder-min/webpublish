@@ -39,7 +39,7 @@ for (let i = 0; i < objList.length; i++) {
 
 //두 수를 입력받아, 곱한 결과를 반환하는 함수
 //두 수는 0보다 커야 함!!
-console.clear();
+// console.clear();
 function multi(a, b) {
     let result = undefined;
     if(a > 0 && b > 0){
