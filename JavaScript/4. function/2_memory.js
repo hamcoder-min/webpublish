@@ -1,13 +1,7 @@
 /**
  * 함수 생성 및 호출
  */
-//문자 --> 숫자 변환 함수
-function toNumber(num1, num2) {
-    return {
-        num1: parseInt(num1), 
-        num2: parseInt(num2)
-    };
-}
+import { toNumber } from "../commons/util.js";
 
 add(100, 200);
 add('100', '200');
