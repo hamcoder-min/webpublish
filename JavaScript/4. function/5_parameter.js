@@ -4,10 +4,17 @@
  * Spread operator(스프레드 연산자 : ...)
  */
 
-add(1, 2);
-add(1, 2, 3, 6, 2, 5, 9);
-add(1, 2, 3, 6, 2, 5, 9, 10, 45, 11, 23);
+console.log(add(1, 2));
+console.log(add(1, 2, 3, 6, 2, 5, 9));
+console.log(add(1, 2, 3, 6, 2, 5, 9, 10, 45, 11, 23));
 
 function add(... numbers) {
-    return a + b;
+    //합계 구하는 로직!
+    // let sum = 0;
+    // for(let i = 0; i < numbers.length; i++){
+    //     sum += numbers[i];
+    // }
+
+    let sum = numbers.reduce((acc, cur) => acc + cur);  //return과 {}를 생략 가능 (원래는 (acc, cur) => {return acc + cur})
+    return sum;
 }
