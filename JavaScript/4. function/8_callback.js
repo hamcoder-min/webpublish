@@ -18,7 +18,7 @@ job(1, 2, print);   //동기식
  */
 // setTimeout(callback(처리할 함수 형식), delay);
 // setTimeout(print(1, 2), 1000);
-console.clear();
+// console.clear();
 
 console.log(`동기식 처리 --------------> 1`);
 console.log(`동기식 처리 --------------> 2`);
