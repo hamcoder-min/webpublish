@@ -1,5 +1,5 @@
 /**
- * 회원 관리 클래스
+ * 회원 관리 클래스 정의
  */
 class Member {
     #id;
@@ -37,9 +37,13 @@ class JoinMember extends Member {
     setEmailname = (emailname) => this.emailname = emailname;
     setEmailedomain = (emaildomain) => this.emaildomain = emaildomain;
 
-    display = () => console.log(this.getId(), this.getPwd(), this.name, this.phone, this.emailname, this.emaildomain);
+    display = () => console.log(this.getId()
+                                , this.getPwd()
+                                , this.name
+                                , this.phone
+                                , this.emailname
+                                , this.emaildomain);
 }
-
 
 /**
  * 로그인 처리 함수
