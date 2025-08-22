@@ -125,4 +125,3 @@ function signupCheck() {
         member.display();
     }  
 }
-
