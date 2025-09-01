@@ -14,6 +14,3 @@ let day = date.getDay();
 console.log(`${year}년 ${month}월 ${day}일`);
 console.log(date.toLocaleDateString('ko-KR'));
 console.log(date.toLocaleDateString('en-US'));
-
-
-
