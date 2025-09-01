@@ -36,6 +36,3 @@ console.log(flist[2]);
 
 if(flist[1].trim() === '레몬') console.log(flist[1]);
 else console.log(flist[0]);
-
-
-

@@ -38,4 +38,3 @@ let flag2 = new Boolean(true);
 
 console.log(flag1 == flag2);
 console.log(flag1 == flag2.valueOf());
-

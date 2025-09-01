@@ -15,4 +15,3 @@ let decodeUri = decodeURI(encodeUri);
 console.log(uri);
 console.log(encodeUri);
 console.log(decodeUri);
-
