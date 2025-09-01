@@ -1,4 +1,5 @@
 // import { Student, Professor, Parent, Employee, Member } from "../commons/member.js";
+
 /**
  * 학생, 교수, 학부모, 직원 폼에 따른 클래스 정의 및 생성
  * - 공통적인 입력 값 : 성명, 나이, 주소는 멤버라는 부모 클래스로 정의
