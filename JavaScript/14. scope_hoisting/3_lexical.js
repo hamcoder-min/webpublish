@@ -9,7 +9,7 @@
     {
         const a = 2;  //지역 변수
         console.log(a);
-        console.log(c);
+        // console.log(c);
         
         {
             const a = 3;
