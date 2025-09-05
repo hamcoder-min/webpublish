@@ -55,8 +55,6 @@ async function createSwiper() {
     };
 
     console.log(posterList);
-    
-    
 
     let output = `
         <div class="swiper">
@@ -81,7 +79,7 @@ async function createSwiper() {
         </div>
     `;
 
-    document.querySelector('#content').innerHTML = output;
+    document.querySelector('.content-top').innerHTML = output;
 
     const swiper = new Swiper('.swiper', {
         // Optional parameters
