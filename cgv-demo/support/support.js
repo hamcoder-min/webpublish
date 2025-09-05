@@ -1,14 +1,25 @@
 //DOM 트리 생성(body 실행)후 DOMContentLoaded 함수 처리
 window.addEventListener('DOMContentLoaded', function() {
     createTable();
+    filterMenuEvent();
 })//Window.addEventListener
 
-function createMenu() {
-    let ouput = `
+function filterMenuEvent() {
+    let menuList = document.querySelectorAll(".filter-menu a");
+    menuList.forEach((menu) => {
+        menu.addEventListener('click', () => {
+            let type = menu.id;
+            filterData(type);
+        });
+    })
+}
 
-    `;
-
-    document.querySelector('.filter-menu').innerHTML;
+async function filterData(type) {
+    let list = await getData();
+    let filterList = list.filter((item) => item.type === type);
+    console.log(filterList);
+    createTable(filterList);
+    
 }
 
 async function getData() {
@@ -16,11 +27,11 @@ async function getData() {
     return response.json();
 }
 
-async function createTable() {
-    let list = await getData();
+async function createTable(list) {  //list는 array type
+    // let list = await getData();
 
     let output = `
-        <table>
+        <table class="stable">
             <thead>
                 <tr>
                     <th>번호</th>
@@ -48,5 +59,6 @@ async function createTable() {
             </tfoot>
         </table>
     `;
+    document.querySelector('.stable')?.remove();
     document.querySelector('#before-table').insertAdjacentHTML(`afterend`, output);
 }
