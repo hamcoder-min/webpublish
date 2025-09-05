@@ -55,8 +55,6 @@ async function createSwiper() {
     };
 
     console.log(posterList);
-    
-    
 
     let output = `
         <div class="swiper">
