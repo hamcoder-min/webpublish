@@ -7,15 +7,15 @@ export function Counter({click, total, init}) {
 
     const handleClickIncrement = () => {
         if(number < 10) {
-            setNumber(number + 1);
-            click("+");
+            setNumber(number + 1);  //자식 자신의 상태 변경
+            click("+");             //부모에게 "나 + 눌렀어!" 신호
         } else setNumber(number);
         
     }
     const handleClickDecrement = () => {
         if(number > 0) {
-            setNumber(number - 1);
-            click("-");
+            setNumber(number - 1);  //자식 자신의 상태 변경
+            click("-");             //부모에게 "나 - 눌렀어!" 신호
         } else setNumber(0);
     }
     const handleClickInit = () => {
