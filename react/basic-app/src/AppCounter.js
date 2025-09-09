@@ -16,8 +16,8 @@ export default function App() {
     return(
         <>
             <h1>Counter Test</h1>
-            <Counter click={click} total={total}/>
-            <Counter click={click} total={total}/>
+            <Counter click={click} total={total} init = {0}/>
+            <Counter click={click} total={total} init = {0}/>
         </>
     );
 }
