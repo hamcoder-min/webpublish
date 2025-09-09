@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App.js';
 // import App from './AppAvartar.js';
-// import App from './AppButton.js';
-import App from './AppCounter.js';
+import App from './AppButton.js';
+// import App from './AppCounter.js';
 import reportWebVitals from './reportWebVitals.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
