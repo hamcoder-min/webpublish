@@ -18,3 +18,8 @@
     border-radius: 8px;
     text-align: center;
 }
+.avatar-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}

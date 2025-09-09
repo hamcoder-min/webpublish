@@ -3,12 +3,10 @@ import { Avatar } from './Avatar.jsx';
 /**
  * Avatar 컴포넌트 리스트
  */
-export function AvatarList() {
+export function AvatarList({list, className}) {
     return (
-        <>
-            <Avatar img="/images/people1.webp" name="Smith"/>
-            <Avatar img="/images/people1.webp" name="Smith"/>
-            <Avatar img="/images/people1.webp" name="Smith"/>
-        </>
+        <div className={className}>
+            { list.map(item => <Avatar img={item.img} name={item.name}/>) }
+        </div>
     );
 }
