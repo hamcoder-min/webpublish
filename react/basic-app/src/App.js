@@ -4,6 +4,7 @@ import { MyButton } from './component/MyButton.jsx'
 import { Menu } from './component/Menu.jsx'
 import { Menu2 } from './component/Menu2.jsx'
 import { MenuList } from './component/MenuList.jsx'
+import { AvatarImage } from './component/AvatarImage.jsx'
 
 export default function App() {
   const menu1 = {
@@ -64,8 +65,12 @@ export default function App() {
             bg={menu1.bg} 
             href={menu1.href}/>
       <Menu2 data={menu1}/>
-      <hr />
+      <hr/>
       <MenuList menus={menus}/>
+      <hr />
+      <AvatarImage img="/images/people1.webp"/>
+      <AvatarImage img="/images/people2.webp"/>
+      <AvatarImage img="/images/people3.webp"/>
     </>
   );
 }

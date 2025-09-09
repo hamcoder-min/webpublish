@@ -3,7 +3,7 @@
 .menu-list {
   list-style-type: none;
   display: flex;
-  gap: 5px;
+  /* gap: 5px; */
 }
 
 .menu {
