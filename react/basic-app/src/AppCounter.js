@@ -17,7 +17,7 @@ export default function App() {
         }
     }
 
-    return(
+    return (
         <>
             <h1>Counter Test : {total}</h1>
             <Counter click={click} total={total} init = {init}/>
