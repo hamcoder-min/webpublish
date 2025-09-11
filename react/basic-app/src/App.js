@@ -1,10 +1,10 @@
 import './App.css';
-import { MyTitle, MyTitle3 } from './component/MyTitle.jsx'
-import { MyButton } from './component/MyButton.jsx'
-import { Menu } from './component/Menu.jsx'
-import { Menu2 } from './component/Menu2.jsx'
-import { MenuList } from './component/MenuList.jsx'
-import { AvatarImage } from './component/AvatarImage.jsx'
+import { MyTitle, MyTitle3 } from './components/MyTitle.jsx'
+import { MyButton } from './components/MyButton.jsx'
+import { Menu } from './components/Menu.jsx'
+import { Menu2 } from './components/Menu2.jsx'
+import { MenuList } from './components/MenuList.jsx'
+import { AvatarImage } from './components/AvatarImage.jsx'
 
 export default function App() {
   const menu1 = {

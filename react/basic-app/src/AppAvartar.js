@@ -1,5 +1,5 @@
 import './css/Avatar.css';
-import { Avatar, AvatarList, AvatarImage, AvatarImageList } from './component/Avatar.jsx';
+import { Avatar, AvatarList, AvatarImage, AvatarImageList } from './components/Avatar.jsx';
 
 export default function App() {
   const list = [

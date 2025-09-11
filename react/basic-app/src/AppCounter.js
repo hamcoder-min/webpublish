@@ -1,4 +1,4 @@
-import { Counter } from "./component/Counter.jsx";
+import { Counter } from "./components/Counter.jsx";
 import './App.css';
 import { useState } from "react";
 

@@ -1,4 +1,4 @@
-import { MyButton } from "./component/MyButton.jsx";
+import { MyButton } from "./components/MyButton.jsx";
 import './App.css';
 
 export default function App() {
