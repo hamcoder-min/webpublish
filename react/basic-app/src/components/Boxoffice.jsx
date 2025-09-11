@@ -23,6 +23,8 @@ export function Boxoffice() {
                             "title": movie.movieNm,
                             "like": true,
                             "icon": "❤",
+                            "openDt": movie.openDt,
+                            "audiAcc": movie.audiAcc,
                             "style": {"width": "600px", "height": "800px"},
                             "icon_style": { 
                                 "bg": "red", 

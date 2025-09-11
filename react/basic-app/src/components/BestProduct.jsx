@@ -67,6 +67,8 @@ export function BestProductItem({item, cartCount}) {
                     cartCount={cartCount}/>
             <BestProductContent 
                     title={item.title}
+                    openDt={item.openDt}
+                    audiAcc={item.audiAcc}
                     sale={item.sale}
                     price={item.price}
                     like={item.like}
