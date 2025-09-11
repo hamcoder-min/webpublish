@@ -1,0 +1,11 @@
+.menu-list {
+    display: flex;
+    list-style: none;
+}
+.menu-item {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

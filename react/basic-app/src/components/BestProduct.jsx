@@ -55,7 +55,6 @@ export function BestProduct() {
  * 베스트 상품 아이템 컴포넌트
 */
 export function BestProductItem({item, cartCount}) {
-    
     return(
         <div>
             <BestProductImage  
@@ -63,14 +62,15 @@ export function BestProductItem({item, cartCount}) {
                     style ={{width: "200px", height: "300px"}}
                     rank={item.rank}
                     like={item.like}
-                    icon="🤍"
+                    icon={item.icon}
+                    icon_style={item.icon_style}
                     cartCount={cartCount}/>
             <BestProductContent 
                     title={item.title}
                     sale={item.sale}
                     price={item.price}
                     like={item.like}
-                    icon="🛒" />
+                    icon={item.icon} />
         </div>
     );
 }
