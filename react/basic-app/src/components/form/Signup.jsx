@@ -18,29 +18,6 @@ export function Signup() {
         }, {});
     });
     
-    // console.log('initForm --> ', initForm);
-    // console.log('refs --> ', refs);
-    
-    // const refs = {
-    //     idRef: useRef(null),
-    //     pwdRef: useRef(null),
-    //     cpwdRef: useRef(null),
-    //     nameRef: useRef(null),
-    //     phoneRef: useRef(null),
-    //     emailNameRef: useRef(null),
-    //     emailDomainRef: useRef(null)
-    // };
-
-    // const initForm = {
-    //     id: "",
-    //     pwd: "",
-    //     cpwd:"",
-    //     name: "",
-    //     phone: "",
-    //     emailName: "",
-    //     emailDomain: "default"
-    // };
-
     const [form, setForm] = useState(initForm(initArray));
     const [errors, setErrors] = useState({...initForm(initArray), emailDomain: ""});
 
@@ -61,9 +38,6 @@ export function Signup() {
             console.log('submit ===>> ', form);
         }
     }
-
-    console.log('initForm --> ', initForm);
-
 
     return (
     <div className="content">
