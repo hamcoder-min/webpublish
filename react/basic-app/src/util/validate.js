@@ -26,7 +26,7 @@ export function validateFormCheck({refs, setErrors}) {
         setErrors({emailName: "이메일을 입력해주세요."});
         refs.emailNameRef.current.focus();
         return false;
-    } else if(refs.eamilDoaminRef.current.value === "default") {
+    } else if(refs.emailDomainRef.current.value === "default") {
         setErrors({emailDomain: "이메일주소를 선택해주세요."});
         refs.emailDomainRef.current.focus();
         return false;

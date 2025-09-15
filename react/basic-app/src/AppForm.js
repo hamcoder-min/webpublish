@@ -1,4 +1,4 @@
-// import { Login2 } from "./components/form/Login2.jsx";
+import { Login2 } from "./components/form/Login2.jsx";
 import { Signup } from "./components/form/Signup.jsx";
 
 export default function App() {

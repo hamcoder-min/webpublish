@@ -8,6 +8,7 @@ export function Login2() {
         msgIdRef: useRef(null),
         msgPassRef: useRef(null)
     }
+    
     const [form, setForm] = useState({id:'', pass:''}); //폼의 입력데이터 저장
     const [msg, setMsg] = useState({id:'', pass:''});
     
