@@ -12,7 +12,7 @@ export default function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Layout/>}>
-                        <Route index element={<Home/>} />      {/*} path와 to가 동일해야함(Lyaout 안에 있는 Layout)*/}
+                        <Route index element={<Home/>} />      {/* path와 to가 동일해야함(Lyaout 안에 있는 Layout)*/}
                         <Route path='/login' element={<Login/>} />    {/* path와 to가 동일해야함(Lyaout 안에 있는 Layout)*/}
                         <Route path='/signup' element={<Signup/>} />    
                         <Route path='/about' element={<About/>} />
