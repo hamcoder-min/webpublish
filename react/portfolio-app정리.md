@@ -1,3 +1,5 @@
+### package.json 파일 수정 시 npm start 재실행
+
 ## 앱 생성
 - npx create-react-app@5.0.1 portfolio-app
 
