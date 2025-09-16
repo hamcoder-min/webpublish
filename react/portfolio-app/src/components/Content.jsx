@@ -1,5 +1,6 @@
-import { About } from "./content/About.jsx";
 import { Home } from "./content/Home.jsx";
+import { About } from "./content/About.jsx";
+import { Skill } from "./content/Skill.jsx";
 
 export function Content() {
     const homeData = {
@@ -13,6 +14,7 @@ export function Content() {
         <>
             <Home data={homeData} />
             <About />
+            <Skill />
         </>
     );
 }
