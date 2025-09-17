@@ -5,9 +5,15 @@ export function Title({title}) {
     );
 }
 
-export function Description() {
+export function SubTitle({title}) {
     return (
-        <p className="description">
+        <p className="description">{title}</p>
+    );
+}
+
+export function Description({style}) {
+    return (
+        <p className={style}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Corporis illo dolore tenetur assumenda magni nihil. 
             Natus eligendi voluptas, autem commodi tempore eum, hic inventore, 
