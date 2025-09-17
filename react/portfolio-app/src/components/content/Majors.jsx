@@ -16,28 +16,7 @@ export function Major({icons, title, subjects, style}) {
     );
 }
 
-export function Majors() {
-    const majors = [
-        { 
-            "icons": "html",
-            "title": "Front-End",
-            "subjects": "HTML, CSS, JavaScript, TypeScript, React, WebAPIs",
-            "style": "fa-brands fa-html5 major-icon"
-        },
-        { 
-            "icons": "mobile",
-            "title": "Mobile",
-            "subjects": "Android, React Native, iOS, Swift, Java, Kotlin",
-            "style": "fa-solid fa-mobile major-icon"
-        },
-        { 
-            "icons": "server",
-            "title": "Back-End",
-            "subjects": "Java, JavaScript, Go, Kotlin, Spring, Spring Boot",
-            "style": "fa-solid fa-server major-icon"
-        },
-    ];
-
+export function Majors({majors}) {
     return (
         <ul className="majors">
             {majors && majors.map(major => 

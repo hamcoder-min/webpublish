@@ -21,3 +21,9 @@ export function Description({style}) {
         </p>
     );
 }
+
+export function BottomDescription({description}) {
+    return (
+        <p>{description}</p>
+    );
+}

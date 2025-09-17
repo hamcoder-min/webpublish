@@ -9,14 +9,7 @@ export function Category({style, title, count, hover}) {
     );
 }
 
-export function Categories() {
-    const categories = [
-        { "title": "All", "count": "8" },
-        { "title": "Front-end", "count": "4" },
-        { "title": "Back-end", "count": "2" },
-        { "title": "Mobile", "count": "2" }
-    ];
-
+export function Categories({categories}) {
     const [active, setActive] = useState('All');
     const handleMouseOver = (title) => {
         setActive(title);

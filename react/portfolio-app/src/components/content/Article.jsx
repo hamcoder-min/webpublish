@@ -19,16 +19,7 @@ export function SkillsTitle({title}) {
 /**
  * CodingSkills
  */
-export function CodingSkills() {
-    const skills = [
-        { "title": "HTML", "value": "98%", "width": "98%" },
-        { "title": "CSS", "value": "90%", "width": "90%" },
-        { "title": "JavaScript", "value": "90%", "width": "90%" },
-        { "title": "TypeScript", "value": "80%", "width": "80%" },
-        { "title": "React", "value": "79%", "width": "79%" },
-        { "title": "NodeJs", "value": "68%", "width": "68%" },
-    ];
-
+export function CodingSkills({skills}) {
     return (
         <ul>
             {skills && skills.map(skill => 

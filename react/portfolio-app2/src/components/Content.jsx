@@ -1,5 +1,5 @@
-import { About } from "./content/About.jsx";
 import { Home } from "./content/Home.jsx";
+import { About } from "./content/About.jsx";
 
 export function Content() {
     const homeData = {
