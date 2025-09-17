@@ -6,7 +6,7 @@ export function About() {
     return (
         <section id="about" className="section container">
             <Title title="About Me"/>
-            <Description />
+            <Description style="description" />
             <Majors />
             <Jobs />
         </section>

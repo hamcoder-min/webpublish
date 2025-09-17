@@ -1,7 +1,7 @@
 
 export function Article({children, style}) {
     return (
-        <article className={style} >
+        <article className={style}>
             {children}
         </article>
     );
