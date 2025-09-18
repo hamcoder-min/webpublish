@@ -6,7 +6,6 @@ import { validateFormCheck } from "../utils/validate.js";
 export function Login() {
     const idRef = useRef(null);
     const pwdRef = useRef(null);
-    
     const [formData, setFormData] = useState({id:'', pwd:''});
     const [errors, setErrors] = useState({id:'', pwd:''});
     
