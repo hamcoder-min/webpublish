@@ -1,6 +1,10 @@
+import React from 'react';
 
-export function Proudcts() {
+export function Products() {
     return (
-        <h1>Product</h1>
+        <div>
+            
+        </div>
     );
 }
+
