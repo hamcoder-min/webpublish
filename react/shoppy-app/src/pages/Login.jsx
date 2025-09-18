@@ -1,28 +1,71 @@
+import { useRef, useState } from "react";
+import { FaRegUser } from 'react-icons/fa6';
+import { FaLock } from "react-icons/fa";
+import { validateFormCheck } from "../utils/validate.js";
 
 export function Login() {
+    const idRef = useRef(null);
+    const pwdRef = useRef(null);
+    
+    const [formData, setFormData] = useState({id:'', pwd:''});
+    const [errors, setErrors] = useState({id:'', pwd:''});
+    
+    const handleFormChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({...formData, [name]: value});
+        setErrors({id:'', pwd:''});
+    }
+    
+    const handleLoginSubmit = (e) => {
+        e.preventDefault();
+        const param = {
+            idRef: idRef,
+            pwdRef: pwdRef,
+            errors: errors,
+            setErrors: setErrors
+        }
+        if(validateFormCheck(param)) {
+            console.log('서버전송 --> ', formData);
+        }
+        
+    }
+
     return (
         <div className="content">
         <div className="center-layout login-form">
             <h1 className="center-title">로그인</h1>
-            <form action="#" method="post">
+            <form onSubmit={handleLoginSubmit}>
                 <ul>
                     <li>
                         <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
                     </li>
                     <li>
                         <div className="login-form-input">
+                            <FaRegUser />
                             <i className="fa-regular fa-user"></i>
-                            <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요" />
+                            <input  type="text" 
+                                    name="id" 
+                                    value={formData.id}
+                                    ref={idRef}
+                                    onChange={handleFormChange}
+                                    placeholder="아이디를 입력해주세요" />
                         </div>
+                            <span style={{color:"red", fontSize:"0.8rem"}}>{errors.id}</span>
                     </li>
                     <li>
                         <div className="login-form-input">
-                            <i className="fa-solid fa-lock"></i>
-                            <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요" />
+                            <FaLock />
+                            <input  type="password" 
+                                    name="pwd" 
+                                    value={formData.pwd}
+                                    ref={pwdRef}
+                                    onChange={handleFormChange} 
+                                    placeholder="비밀번호를 입력해주세요" />
                         </div>
+                            <span style={{color:"red", fontSize:"0.8rem"}}>{errors.pwd}</span>
                     </li>
                     <li>
-                        <button type="button" className="btn-main-color" onclick="loginCheck()">로그인</button>
+                        <button type="submit" className="btn-main-color">로그인</button>
                     </li>
                     <li>
                         <div>
