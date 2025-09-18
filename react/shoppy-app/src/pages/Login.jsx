@@ -27,7 +27,6 @@ export function Login() {
         if(validateFormCheck(param)) {
             console.log('서버전송 --> ', formData);
         }
-        
     }
 
     return (
