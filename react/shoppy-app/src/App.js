@@ -13,7 +13,7 @@ import './styles/cgv.css';
 import './styles/shoppy.css';
 
 export default function App() {
-  const [cartCount, setCartCount] = useState(0); //1. 장자구니 수량 관리
+  const [cartCount, setCartCount] = useState(0); //1. 장바구니 수량 관리
   const [cartItems, setCartItems] = useState([]); //2. 장바구니 아이템 관리
 
   const addCart = (cartItem) => { //<--  ProductDetail 쇼핑백 추가 이벤트 처리
