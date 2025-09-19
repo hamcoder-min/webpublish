@@ -10,7 +10,7 @@ export function ProductDetail({addCart}) {
     const [product, setProduct] = useState({});
     const [size, setSize] = useState('XS');
     const [imgList, setImgList] = useState([]);
-    const tabLabels = ['DETALE', 'REVIEW','Q&A', 'RETURN & DELIVERY'];
+    const tabLabels = ['DETAIL', 'REVIEW','Q&A', 'RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
     const tabEventNames = ['detail', 'review', 'qna', 'return'];
     
@@ -26,7 +26,7 @@ export function ProductDetail({addCart}) {
     
     //쇼핑백 추가하기
     const handleAddCartItem = () => {
-        alert('상품이 카트에 추가되었습니다.');
+        // alert('상품이 카트에 추가되었습니다.');
         const cartItem = {
             pid: product.pid,
             size: size,

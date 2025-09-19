@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { LiaShoppingCartSolid } from "react-icons/lia";
-import { useEffect, useState } from "react";
 
 export function Header({cartCount}) {
     return (
