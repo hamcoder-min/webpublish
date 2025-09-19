@@ -19,8 +19,9 @@ export default function App() {
   const addCart = (cartItem) => { //<--  ProductDetail 쇼핑백 추가 이벤트 처리
     setCartItems(cartItemsCheck(cartItems, cartItem));
     setCartCount(cartCount +1);
+    // console.log(cartItems, cartCount);
   }
-
+  
   return (
     <BrowserRouter>
       <Routes>
