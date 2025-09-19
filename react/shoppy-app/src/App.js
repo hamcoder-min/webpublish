@@ -7,9 +7,7 @@ import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
-
 import { cartItemsCheck } from './utils/cart.js';
-
 import './styles/cgvSignup.css';
 import './styles/cgv.css';
 import './styles/shoppy.css';
