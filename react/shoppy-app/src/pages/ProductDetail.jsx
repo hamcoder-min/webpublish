@@ -5,7 +5,7 @@ import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from '../components/commons/ImageList.jsx';
 import { StarRating } from '../components/commons/StarRating.jsx';
 
-export function ProductDetail() {
+export function ProductDetail({addCart}) {
     const {pid} = useParams();    //{pid: 1}
     const [product, setProduct] = useState({});
     const [size, setSize] = useState('XS');
@@ -20,7 +20,17 @@ export function ProductDetail() {
         }
         filterData();
     }, []);
-    console.log("---> ", product);
+    
+    //쇼핑백 추가하기
+    const handleAddCartItem = () => {
+        alert('상품이 카트에 추가되었습니다.');
+        const cartItem = {
+            pid: product.pid,
+            size: size,
+            qty: 1
+        }
+        addCart(cartItem);
+    }
     
     return (
         <div className='content'>
@@ -57,7 +67,11 @@ export function ProductDetail() {
                     </li>
                     <li className='flex'>
                         <button type='button' className='product-detail-button order'>바로 구매</button>
-                        <button type='button' className='product-detail-button cart'>쇼핑백 담기</button>
+                        <button type='button' 
+                                className='product-detail-button cart'
+                                onClick={handleAddCartItem}>
+                            쇼핑백 담기
+                        </button>
                         <div type='button' className='gift'>
                             <PiGiftThin />
                             <div className='gift-span'>선물하기</div>
