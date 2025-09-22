@@ -141,16 +141,22 @@ export function ReviewListItem() {
             </div>
             <ul className='product_review_evaluation'>
                 <li>
-                    <strong>사이즈</strong>
-                    <em>적당함</em>
+                    <div>
+                        <strong>사이즈</strong>
+                        <em>적당함</em>
+                    </div>
                 </li>
                 <li>
-                    <strong>색상</strong>
-                    <em>같음</em>
+                    <div>
+                        <strong>색상</strong>
+                        <em>같음</em>
+                    </div>
                 </li>
                 <li>
-                    <strong>소재</strong>
-                    <em>같음</em>
+                    <div>
+                        <strong>소재</strong>
+                        <em>같음</em>
+                    </div>
                 </li>
             </ul>
             <ul className='pdt_review_photo'>
