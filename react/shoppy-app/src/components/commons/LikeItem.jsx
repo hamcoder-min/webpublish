@@ -11,4 +11,3 @@ export function LikeItem({style, icons, value}) {
         </button>
     );
 }
-
