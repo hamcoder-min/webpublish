@@ -17,12 +17,12 @@
         }
     ],
     "topImgList":  [
-                            "https://picsum.photos/id/10/200/300",
-                            "https://picsum.photos/id/10/200/300",
-                            "https://picsum.photos/id/10/200/300",
-                            "https://picsum.photos/id/10/200/300",
-                            "https://picsum.photos/id/10/200/300",
-                            "https://picsum.photos/id/10/200/300",
-                            "https://picsum.photos/id/10/200/300"    
-                        ]
+        "https://picsum.photos/id/10/200/300",
+        "https://picsum.photos/id/10/200/300",
+        "https://picsum.photos/id/10/200/300",
+        "https://picsum.photos/id/10/200/300",
+        "https://picsum.photos/id/10/200/300",
+        "https://picsum.photos/id/10/200/300",
+        "https://picsum.photos/id/10/200/300"    
+    ]
 }
