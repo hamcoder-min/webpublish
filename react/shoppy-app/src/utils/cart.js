@@ -40,7 +40,6 @@ export function cartItemsAddInfo(products, items) {
     });
 }
 
-
 /**
  * 장바구니 수량 증가 체크 함수
  */
