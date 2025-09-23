@@ -24,24 +24,19 @@ export function Cart({items, updateCart}) {
                 item.cid === cid ?
                     type === '+'? 
                         {...item, qty: item.qty+1} 
-                    : 
-                        item.qty > 1 ?
+                    :   item.qty > 1 ?
                             {...item, qty: item.qty-1} 
-                        : 
-                            item
-                : 
-                    item
+                        :   item
+                :   item
             )
         );
 
         const findItem = cartList.find((item) => item.cid === cid);
         type === '+' ? 
             setTotalPrice(totalPrice + findItem.price) 
-        :   
-            findItem.qty > 1 ? 
+        :   findItem.qty > 1 ? 
                 setTotalPrice(totalPrice - findItem.price) 
-            : 
-                setTotalPrice(totalPrice);
+            :   setTotalPrice(totalPrice);
 
         updateCart(cid, type);
     }

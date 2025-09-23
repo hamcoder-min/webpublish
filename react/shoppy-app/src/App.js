@@ -33,11 +33,9 @@ export default function App() {
         setCartItems(updateCartItemsQty(cartItems, cid, type));
         type === '+' ? 
           setCartCount(cartCount +1) 
-        :
-          cartCount > 1 ?
+        : cartCount > 1 ?
             setCartCount(cartCount - 1)
-          :
-            setCartCount(cartCount);
+          : setCartCount(cartCount);
     }
   }
 

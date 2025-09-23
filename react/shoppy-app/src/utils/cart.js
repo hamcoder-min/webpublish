@@ -6,13 +6,10 @@ export function updateCartItemsQty(cartItems, cid, type) {
         item.cid === cid ?
             type === '+'? 
                 {...item, qty: item.qty+1} 
-            : 
-                item.qty > 1 ?
+            :   item.qty > 1 ?
                     {...item, qty: item.qty-1} 
-                : 
-                    item
-        : 
-            item
+                :   item
+        :   item
     );
 }
 
