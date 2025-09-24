@@ -29,4 +29,4 @@ export function Header({cartCount}) {
             </div>
         </div>
     );
-}
+} 
