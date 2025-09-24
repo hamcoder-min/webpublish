@@ -17,8 +17,22 @@ export function Support() {
         }
         fetch();
     }, []);
-    // console.log(menus, category, list);
     
+    const filterList = (type) => {
+        console.log('filterList -> ', type);
+        //시스템점검 --> list: system
+        const filter = async () => {
+            const jsonData = await axiosData('/data/support.json');
+            if(type === 'all') {
+                setList(jsonData.list);
+            } else{
+                const filterData = jsonData.list.filter((item) => item.type === type);
+                setList(filterData);
+            }
+        }
+        filter();
+    }
+
     return (
         <div className="content">
             <div className="support center-layout">
@@ -27,7 +41,7 @@ export function Support() {
                     <p style={{color: "#777"}}>CGV의 주요한 이슈 및 여러가지 소식들을 확인할 수 있습니다.</p>
                     <SearchForm category={category}/>
                     <nav>
-                        <MenuList menus={menus}/>
+                        <MenuList menus={menus} filterList={filterList} />
                     </nav>
                     <p style={{color: "#777"}}>총 114건이 검색되었습니다. </p>
 

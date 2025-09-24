@@ -1,8 +1,14 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { LiaShoppingCartSolid } from "react-icons/lia";
 
 export function Header({cartCount}) {
+    // useEffect(() => {
+    //     const loginInfo = localStorage.getItem("loginInfo");
+    //     console.log('loginInfo', JSON.parse(loginInfo)); //문자열을 JSON 객체로 변환
+    // }, []);
+    
     return (
         <div className="header-outer">
             <div className="header">
