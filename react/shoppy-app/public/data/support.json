@@ -1,8 +1,8 @@
 {
     "category": [
-                {"name": "제목", "value": "title"},
-                {"name": "내용", "value": "content"},
-                {"name": "날짜", "value": "cdate"}
+                    {"name": "제목", "value": "title"},
+                    {"name": "내용", "value": "content"},
+                    {"name": "날짜", "value": "cdate"}
     ],
     "menus": [
                 {"href": "#", "name": "전체", "style": "filter-menu", "type": "all"},
