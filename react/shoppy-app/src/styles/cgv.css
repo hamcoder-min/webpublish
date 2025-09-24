@@ -63,9 +63,9 @@ header {
     border-top: 1px solid silver;
     /* border-bottom: 2px solid tomato;     */
 }
-.header-bottom-content {
-    /* border: 1px solid blue; */
-}
+/* .header-bottom-content {
+    border: 1px solid blue;
+} */
 
 .header-bottom li {
     padding: 10px 25px;
@@ -78,9 +78,9 @@ header {
     font-weight: 700;
     color: var(--color-primary);
 }
-.header-top ul { 
-    /* border: 1px solid tomato; */
-}
+/* .header-top ul { 
+    border: 1px solid tomato;
+} */
 .header-menu-icon {
     /* border: 1px solid blue; */
     display: block;
@@ -285,9 +285,9 @@ footer {
 }
 
 /** 이벤트 섹션 */
-.content-event-special section:first-child {
-    /* border: 1px solid red; */
-}
+/* .content-event-special section:first-child {
+    border: 1px solid red;
+} */
 .content-event-list {
     /* border: 1px solid blue; */
     display: flex;
@@ -485,11 +485,11 @@ footer {
     padding: 0;
   
 } */
-.login-form input[type="text"],
+/* .login-form input[type="text"],
 .login-form input[type="password"] {
-    /* border: 1px solid blue; */
-    /* padding-left: 20px; */
-}
+    border: 1px solid blue; */
+    /* padding-left: 20px;
+} */
 .login-form button {
     outline-color: var(--color-button);
     outline-style: solid;
