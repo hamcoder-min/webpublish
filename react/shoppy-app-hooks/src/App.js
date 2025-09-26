@@ -9,32 +9,35 @@ import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Support } from './pages/Support.jsx';
 import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
 import { CartProvider } from './context/CartContext.js';
+import { ProductProvider } from './context/ProductContext.js';
+import { AuthProvider } from './context/AuthContext.js';
 
 import './styles/cgvSignup.css';
 import './styles/cgv.css';
 import './styles/commons.css';
 import './styles/shoppy.css';
-import { ProductProvider } from './context/ProductContext.js';
 
 export default function App() {
   return (
+    <AuthProvider>
     <ProductProvider>
-      <CartProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path='/all' element={<Products />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/signup' element={<Signup />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/products/:pid' element={<ProductDetail />} />
-              <Route path='/checkout' element={<CheckoutInfo />} />
-              <Route path='/support' element={<Support />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </CartProvider>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='/all' element={<Products />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/products/:pid' element={<ProductDetail />} />
+            <Route path='/checkout' element={<CheckoutInfo />} />
+            <Route path='/support' element={<Support />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
     </ProductProvider>
+    </AuthProvider>
   );
 }

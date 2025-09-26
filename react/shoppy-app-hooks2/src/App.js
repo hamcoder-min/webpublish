@@ -9,6 +9,7 @@ import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Support } from './pages/Support.jsx';
 import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
 import { CartProvider } from './context/CartContext.js';
+import { AuthProvider } from './context/AuthContext.js';
 
 import './styles/cgvSignup.css';
 import './styles/cgv.css';
@@ -17,6 +18,7 @@ import './styles/shoppy.css';
 
 export default function App() {
   return (
+    <AuthProvider>
     <CartProvider>
       <BrowserRouter>
         <Routes>
@@ -33,5 +35,6 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </CartProvider>
+    </AuthProvider>
   );
 }
