@@ -1,62 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { axiosData } from '../utils/dataFetch.js';
-import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
+import { CartContext } from '../context/CartContext.js';
+import { useCart } from '../hooks/useCart.js';
 import '../styles/cart.css';
 
-export function Cart({items, updateCart}) {
+export function Cart() {
+    const {showCart, updateCart, removeCart} = useCart();
+    const {cartList, totalPrice} = useContext(CartContext);
     const navigate = useNavigate();
-    const [cartList, setCartList] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
-        const fetch = async () => {
-            const jsonData = await axiosData('/data/products.json');
-            setCartList(cartItemsAddInfo(jsonData, items));
-            setTotalPrice(getTotalPrice(jsonData, items));
-        }
-        fetch();
+        showCart();
     }, []);
 
-    //수량 업데이트 함수
-    const handleUpdateCartList = (cid, type) => {
-        setCartList((cartList) => 
-            cartList.map((item) => 
-                item.cid === cid ?
-                    type === '+'? 
-                        {...item, qty: item.qty+1} 
-                    :   item.qty > 1 ?
-                            {...item, qty: item.qty-1} 
-                        :   item
-                :   item
-            )
-        );
-
-        const findItem = cartList.find((item) => item.cid === cid);
-        type === '+' ? 
-            setTotalPrice(totalPrice + findItem.price) 
-        :   findItem.qty > 1 ? 
-                setTotalPrice(totalPrice - findItem.price) 
-            :   setTotalPrice(totalPrice);
-
-        updateCart(cid, type);
-    }
-    
-    //장바구니 아이템 삭제 함수
-    const handleRemoveCartList = (cid) => {
-        const findItem = cartList.find(item => item.cid === cid);
-        setTotalPrice(totalPrice - (findItem.qty * findItem.price));
-
-        setCartList((cartList) => {
-            return cartList.filter(item => !(item.cid === cid));
-        });
-
-        updateCart(cid);
-    }
-    
-    console.log('cartList', cartList);
-    
     return (
         <div className='cart-container'>
             <h2 className='cart-header'>장바구니</h2>
@@ -71,11 +28,11 @@ export function Cart({items, updateCart}) {
                             <p className='cart-item-price'>{parseInt(item.price).toLocaleString()}원</p>
                         </div>
                         <div className='cart-quantity'>
-                            <button type='button' onClick={() => {item.qty > 1 && handleUpdateCartList(item.cid,'-')}}>-</button>
+                            <button type='button' onClick={() => {item.qty > 1 && updateCart(item.cid,'-')}}>-</button>
                             <input type="text" value={item.qty} readOnly/>
-                            <button type='button' onClick={() => {handleUpdateCartList(item.cid,'+')}}>+</button>
+                            <button type='button' onClick={() => {updateCart(item.cid,'+')}}>+</button>
                         </div>
-                        <button className='cart-remove' onClick={() =>{handleRemoveCartList(item.cid)}}>
+                        <button className='cart-remove' onClick={() =>{removeCart(item.cid)}}>
                             <RiDeleteBin6Line />
                         </button>
                     </div>
@@ -107,7 +64,7 @@ export function Cart({items, updateCart}) {
                     </div>
                     <div className='cart-actions'>
                         <button type='button' onClick={() => {
-                            navigate('/checkout', {state: {cartList: cartList, totalPrice: totalPrice}});
+                            navigate('/checkout');
                         }}>주문하기</button>
                     </div>
                 </>
