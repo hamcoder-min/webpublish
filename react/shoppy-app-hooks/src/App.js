@@ -14,24 +14,27 @@ import './styles/cgvSignup.css';
 import './styles/cgv.css';
 import './styles/commons.css';
 import './styles/shoppy.css';
+import { ProductProvider } from './context/ProductContext.js';
 
 export default function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path='/all' element={<Products />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/cart' element={<Cart />} />
-            <Route path='/products/:pid' element={<ProductDetail />} />
-            <Route path='/checkout' element={<CheckoutInfo />} />
-            <Route path='/support' element={<Support />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </CartProvider>
+    <ProductProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path='/all' element={<Products />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/products/:pid' element={<ProductDetail />} />
+              <Route path='/checkout' element={<CheckoutInfo />} />
+              <Route path='/support' element={<Support />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
+    </ProductProvider>
   );
 }
