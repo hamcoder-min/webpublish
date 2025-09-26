@@ -30,9 +30,7 @@ export function Header() {
                         <span className="header-icons-cart">{cartCount}</span>
                     </Link>
                     {isLogin ?
-                        // <Link to="/login">
-                            <button type="button" onClick={handleLogout}>Logout</button>
-                        // </Link>
+                        <button type="button" onClick={handleLogout}>Logout</button>
                     :
                         <Link to="/login">
                             <button type="button">Login</button>
