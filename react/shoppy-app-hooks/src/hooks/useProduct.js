@@ -3,16 +3,27 @@ import { ProductContext } from '../context/ProductContext.js';
 import { axiosData, groupByRows } from '../utils/dataFetch.js';
 
 export function useProduct() {
-    const {rows, setRows, number, setNumber} = useContext(ProductContext);
+    const {productList, setProductList, product, setProduct, imgList, setImgList} = useContext(ProductContext);
 
-    const products = () => {
+    const createProduct = (number) => {
         const load = async () => {
             const jsonData = await axiosData("/data/products.json");
             const rows = groupByRows(jsonData, number);
-            setRows(rows);
+            setProductList(rows);
         }
         load();
     }
 
-    return {products}
+    const filterProduct = (pid) => {
+        const filterData = async () => {
+            const jsonData = await axiosData("/data/products.json");
+            // createProduct();
+            const [filterProduct] = jsonData.filter((item) => item.pid === pid);
+            setProduct(filterProduct);
+            setImgList(filterProduct.imgList);
+        }
+        filterData();
+    }
+
+    return {createProduct, filterProduct};
 }

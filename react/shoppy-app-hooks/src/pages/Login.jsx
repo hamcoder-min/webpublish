@@ -35,11 +35,6 @@ export function Login() {
             if(did === formData.id && dpwd === formData.pwd) {
                 handleLogin(formData.id);
                 alert('로그인에 성공하셨습니다.');
-                // const loginInfo = {
-                //     "userId": formData.id,
-                //     "token": "wefsdlfj456465"
-                // }
-                // // localStorage.setItem('loginInfo', JSON.stringify(loginInfo));   //객체를 문자열로 저장
                 navigate("/");
             } else {
                 alert('로그인에 실패하셨습니다.');
