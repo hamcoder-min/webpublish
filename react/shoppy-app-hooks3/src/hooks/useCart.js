@@ -1,22 +1,16 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext.js';
-import { axiosData } from '../utils/dataFetch.js';
-import { cartItemsCheck, cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
+import { useContext } from "react"
+import { CartContext } from "../context/CartContext.js";
+import { cartItemsAddInfo, cartItemsCheck, getTotalPrice } from "../utils/cart.js";
+import { axiosData } from "../utils/dataFetch.js";
 
-/**
- * CartContext를 제어하는 함수를 가진 커스텀 훅
- */
 export function useCart() {
-    //CartContext의 값 가져오기
     const {cartCount, setCartCount, cartList, setCartList, totalPrice, setTotalPrice} = useContext(CartContext);
 
-    //장바구니 아이템 추가
-    const addCart = (cartItem) => { //<--  ProductDetail 쇼핑백 추가 이벤트 처리
+    const addCart = (cartItem) => {
         setCartList(cartItemsCheck(cartList, cartItem));
         setCartCount(cartCount +1);
     }
 
-    //장바구니 출력 : 장바구니 아이템 <-- 이미지, 상품명, 상품가격 추가
     const showCart = () => {
         const fetch = async () => {
             const jsonData = await axiosData('/data/products.json');
@@ -26,9 +20,7 @@ export function useCart() {
         fetch();
     }
 
-    //장바구니 수량 변경
     const updateCart = (cid, type) => {
-        //카트 수량 변경
         setCartList((cartList) => 
             cartList.map((item) => 
                 item.cid === cid ?
@@ -41,7 +33,6 @@ export function useCart() {
             )
         );
 
-        //수량 변경에 따른 전체 상품 가격 변경
         const findItem = cartList.find((item) => item.cid === cid);
         type === '+' ? 
             setTotalPrice(totalPrice + findItem.price) 
@@ -49,7 +40,6 @@ export function useCart() {
                 setTotalPrice(totalPrice - findItem.price) 
             :   setTotalPrice(totalPrice);
 
-        //cartCount 수량 변경 : Header
         type === '+' ? 
             setCartCount(cartCount +1) 
         : cartCount > 1 ?
@@ -57,16 +47,14 @@ export function useCart() {
             : setCartCount(cartCount);
     }
 
-    //장바구니 아이템 삭제
     const removeCart = (cid, qty, price) => {
-        // const findItem = cartList.find(item => item.cid === cid);
         setCartList((cartList) => {
             return cartList.filter(item => !(item.cid === cid));
         });
-
-        setCartCount(cartCount - qty); //Header 수량 변경
-        setTotalPrice(totalPrice - (qty * price)); //전체 상품 가격
+        
+        setCartCount(cartCount - qty);
+        setTotalPrice(totalPrice - (qty * price));
     }
 
-    return {addCart, showCart, updateCart, removeCart}
+    return{addCart, showCart, updateCart, removeCart}
 }

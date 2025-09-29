@@ -1,0 +1,24 @@
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext.js";
+
+export function useAuth() {
+    const {isLogin, setIsLogin} = useContext(AuthContext);
+
+    const handleLogin = (userId) => {
+        setIsLogin(!isLogin);
+        const loginInfo = {
+            "userId": userId,
+            "token": "wefsdlfj456465"
+        }
+        //객체를 문자열로 저장
+        localStorage.setItem('loginInfo', JSON.stringify(loginInfo));
+    }
+
+    const handleLogout = () => {
+        alert('로그아웃 되었습니다.')
+        setIsLogin(!isLogin);
+        localStorage.removeItem("loginInfo");
+    }
+
+    return {handleLogin, handleLogout};
+}
