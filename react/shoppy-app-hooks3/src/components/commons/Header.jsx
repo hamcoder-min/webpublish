@@ -21,7 +21,7 @@ export function Header() {
             <div className="header">
                 <Link to="/" className="header-left">
                     <FiShoppingBag />
-                    <span>Shoppy</span>
+                    <span>Shoppy-hooks3</span>
                 </Link>
                 <nav className="header-right">
                     <Link to="/all">Products</Link>

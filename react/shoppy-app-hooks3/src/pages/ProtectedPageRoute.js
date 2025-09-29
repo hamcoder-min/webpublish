@@ -16,6 +16,4 @@ export function ProtectedPageRoute({children}) {
         // isAlert.current = true;
         return children;
     }
-
-
 }
