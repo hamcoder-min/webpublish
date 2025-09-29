@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from '../components/commons/ImageList.jsx';
 import { StarRating } from '../components/commons/StarRating.jsx';
@@ -14,14 +13,11 @@ import { useProduct } from '../hooks/useProduct.js';
 import { ProductContext } from '../context/ProductContext.js';
 
 export function ProductDetail() {
+    const {pid} = useParams();    //{pid: 1}
     const {addCart} = useCart();
     const {filterProduct} = useProduct();
     const {product, imgList} = useContext(ProductContext);
-    
-    const {pid} = useParams();    //{pid: 1}
-    // const [product, setProduct] = useState({});
     const [size, setSize] = useState('XS');
-    // const [imgList, setImgList] = useState([]);
     const tabLabels = ['DETAIL', 'REVIEW','Q&A', 'RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
     const tabEventNames = ['detail', 'review', 'qna', 'return'];
