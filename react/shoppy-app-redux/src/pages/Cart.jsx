@@ -1,20 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { CartContext } from '../context/CartContext.js';
-import { useCart } from '../hooks/useCart.js';
 import '../styles/cart.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { showCart } from '../feature/cart/cartAPI.js';
+import { showCart, updateCart, removeCart } from '../feature/cart/cartAPI.js';
 
 export function Cart() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const cartList = useSelector((state) => state.cart.cartList);
-
-    const navigate = useNavigate();
-    const {updateCart, removeCart} = useCart();
-    const {totalPrice} = useContext(CartContext);
+    const totalPrice = useSelector((state) => state.cart.totalPrice);
 
     useEffect(() => { dispatch(showCart()); }, []);
 
@@ -32,11 +28,11 @@ export function Cart() {
                             <p className='cart-item-price'>{parseInt(item.price).toLocaleString()}원</p>
                         </div>
                         <div className='cart-quantity'>
-                            <button type='button' onClick={() => {item.qty > 1 && updateCart(item.cid,'-')}}>-</button>
+                            <button type='button' onClick={() => {dispatch(updateCart(item.cid,'-'))}}>-</button>
                             <input type="text" value={item.qty} readOnly/>
-                            <button type='button' onClick={() => {updateCart(item.cid,'+')}}>+</button>
+                            <button type='button' onClick={() => {dispatch(updateCart(item.cid,'+'))}}>+</button>
                         </div>
-                        <button className='cart-remove' onClick={() =>{removeCart(item.cid, item.qty, item.price)}}>
+                        <button className='cart-remove' onClick={() =>{dispatch(removeCart(item.cid))}}>
                             <RiDeleteBin6Line />
                         </button>
                     </div>

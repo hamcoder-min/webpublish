@@ -41,7 +41,7 @@ export function ProductDetail() {
             qty: 1
         }
         // addCart(cartItem);
-        dispatch(addCart({"cartItem": cartItem})); //addCart 호출 시 dispatch 전송!!
+        dispatch(addCart(cartItem)); //addCart 호출 시 dispatch 전송!!
     }
     
     return (
