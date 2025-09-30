@@ -14,8 +14,7 @@ export function Header() {
     const cartCount = useSelector((state) => state.cart.cartCount);
     const cartList = useSelector((state) => state.cart.cartList);
     
-    console.log('Header ::: cartList ->', cartList);
-    
+    // console.log('Header ::: cartList ->', cartList);
 
     // useEffect(() => {
     //     const loginInfo = localStorage.getItem("loginInfo");

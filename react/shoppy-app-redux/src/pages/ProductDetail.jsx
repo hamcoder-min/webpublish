@@ -8,19 +8,16 @@ import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
 
-import { useCart } from '../hooks/useCart.js';
 import { useProduct } from '../hooks/useProduct.js';
 import { ProductContext } from '../context/ProductContext.js';
 
 import { useDispatch } from 'react-redux';
-// import { addCartItem, updateCartCount } from '../feature/cart/cartSlice.js';
 import { addCart } from '../feature/cart/cartAPI.js';
 
 export function ProductDetail() {
     const dispatch = useDispatch();
 
     const {pid} = useParams();    //{pid: 1}
-    // const {addCart} = useCart();
     const {filterProduct} = useProduct();
     const {product, imgList} = useContext(ProductContext);
     const [size, setSize] = useState('XS');
@@ -112,6 +109,5 @@ export function ProductDetail() {
             </div>
             <div style={{marginBottom: "50px"}}></div>
         </div>
-
     );
 }
