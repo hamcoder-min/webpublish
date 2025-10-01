@@ -11,21 +11,21 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addCartItem (state, action) {
+        addCartItem(state, action) {
             const {cartItem} = action.payload;
             state.cartList = cartItemsCheck(state.cartList, cartItem);
         },
-        showCartItem (state, action) {
+        showCartItem(state, action) {
             const {items} = action.payload;
             state.cartList = cartItemsAddInfo(items, state.cartList)
         },
-        updateCartCount (state) {
+        updateCartCount(state) {
             state.cartCount = state.cartList.reduce((total, item) => total + item.qty, 0);
         },
-        updateTotalPrice (state) {
+        updateTotalPrice(state) {
             state.totalPrice = state.cartList.reduce((total, item) => total + (item.price * item.qty), 0);
         },
-        updateCartItem (state, action) {
+        updateCartItem(state, action) {
             const {cid, type} = action.payload;
             state.cartList = state.cartList.map((item) => 
                 item.cid === cid ?

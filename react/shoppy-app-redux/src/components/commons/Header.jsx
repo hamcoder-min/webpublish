@@ -1,26 +1,24 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { LiaShoppingCartSolid } from "react-icons/lia";
-import { AuthContext } from "../../context/AuthContext.js";
-import { useAuth } from "../../hooks/useAuth.js";
-
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLogout } from "../../feature/auth/authAPI.js";
 
 export function Header() {
-    const {handleLogout} = useAuth();
-    const {isLogin} = useContext(AuthContext);
-
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const cartCount = useSelector((state) => state.cart.cartCount);
-    const cartList = useSelector((state) => state.cart.cartList);
-    
-    // console.log('Header ::: cartList ->', cartList);
+    const isLogin = useSelector((state) => state.auth.isLogin);
 
-    // useEffect(() => {
-    //     const loginInfo = localStorage.getItem("loginInfo");
-    //     console.log('loginInfo', JSON.parse(loginInfo)); //문자열을 JSON 객체로 변환
-    // }, []);
-    
+    const handleLogout = () => {
+        const succ = dispatch(getLogout());
+        const loginInfo = localStorage.getItem("loginInfo");
+        if(succ && loginInfo === null) {
+            alert('로그아웃 되었습니다.');
+            navigate("/");
+        }
+    }
+
     return (
         <div className="header-outer">
             <div className="header">
