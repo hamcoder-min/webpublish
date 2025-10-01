@@ -2,12 +2,11 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegUser } from 'react-icons/fa6';
 import { FaLock } from "react-icons/fa";
-import { validateFormCheck } from "../utils/validate.js";
-import { useAuth } from "../hooks/useAuth.js";
+import { useDispatch } from "react-redux";
+import { getLogin } from "../feature/auth/authAPI.js";
 
 export function Login() {
-    const {handleLogin} = useAuth();
-
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const idRef = useRef(null);
     const pwdRef = useRef(null);
@@ -28,18 +27,14 @@ export function Login() {
             errors: errors,
             setErrors: setErrors
         }
-        if(validateFormCheck(param)) {
-            // console.log('서버전송 --> ', formData);
-            const did = "test";
-            const dpwd = "1234";
-            if(did === formData.id && dpwd === formData.pwd) {
-                handleLogin(formData.id);
-                alert('로그인에 성공하셨습니다.');
-                navigate("/");
-            } else {
-                alert('로그인에 실패하셨습니다.');
-                idRef.current.focus();
-            }
+
+        const succ = dispatch(getLogin(formData, param));
+        if(succ) {
+            alert('로그인에 성공하셨습니다.');
+            navigate("/");
+        } else {
+            alert('로그인에 실패하셨습니다.');
+            idRef.current.focus();
         }
     }
 

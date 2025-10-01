@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
         updateCartCount (state) {
             state.cartCount = state.cartList.reduce((total, item) => total + item.qty, 0);
         },
-        updateCartPrice (state) {
+        updateTotalPrice (state) {
             state.totalPrice = state.cartList.reduce((total, item) => total + (item.qty * item.price), 0);
         },
         updateCartItem (state, action) {
@@ -45,6 +45,6 @@ export const cartSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addCartItem, showCartItem, updateCartCount, updateCartPrice, updateCartItem, removeCartItem } = cartSlice.actions
+export const { addCartItem, showCartItem, updateCartCount, updateTotalPrice, updateCartItem, removeCartItem } = cartSlice.actions
 
 export default cartSlice.reducer
