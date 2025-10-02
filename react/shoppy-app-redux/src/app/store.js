@@ -15,11 +15,12 @@ const myLoggerMiddleware = (store) => (next) => (action) => {
 const myCartSaveMiddleware = (store) => (next) => (action) => {
     const result = next(action);
 
-    //장바구니(cartSlice) 경우에만 저장
-    if(typeof action.type === "string" && action.type.startSwitch('/cart')) {
+    // 장바구니(cartSlice) 경우에만 저장
+    if(typeof action.type === "string" && action.type.startsWith('cart/')) {
         const cart = store.getState().cart;
-        localStorage.setItem("cart", );
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
+    return result;
 }
 
 export const store = configureStore({
@@ -31,4 +32,5 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
         .concat(myLoggerMiddleware)
+        .concat(myCartSaveMiddleware)
 })
